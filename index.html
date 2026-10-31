@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieExpress - Delicious Food Delivered to Your Door</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased leading-relaxed">
+
+    <!-- 1. NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <span class="text-3xl"></span>
+                    <span class="text-2xl font-extrabold tracking-tight text-slate-900">Foodie<span class="text-brand-600 group-hover:text-brand-500 transition-colors">Express</span></span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-slate-700 hover:text-brand-600 font-medium transition-colors">Home</a>
+                    <a href="#menu" class="text-slate-700 hover:text-brand-600 font-medium transition-colors">Menu</a>
+                    <a href="#why-us" class="text-slate-700 hover:text-brand-600 font-medium transition-colors">About</a>
+                    <a href="#reviews" class="text-slate-700 hover:text-brand-600 font-medium transition-colors">Reviews</a>
+                    <a href="#contact" class="text-slate-700 hover:text-brand-600 font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#menu" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-full shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button (Bonus) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-700 hover:text-brand-600 focus:outline-none p-2 rounded-lg" aria-label="Toggle Navigation">
+                        <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown (Bonus) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block px-3 py-2 rounded-md text-slate-700 hover:text-brand-600 hover:bg-slate-50 font-medium transition-colors">Home</a>
+            <a href="#menu" class="block px-3 py-2 rounded-md text-slate-700 hover:text-brand-600 hover:bg-slate-50 font-medium transition-colors">Menu</a>
+            <a href="#why-us" class="block px-3 py-2 rounded-md text-slate-700 hover:text-brand-600 hover:bg-slate-50 font-medium transition-colors">About</a>
+            <a href="#reviews" class="block px-3 py-2 rounded-md text-slate-700 hover:text-brand-600 hover:bg-slate-50 font-medium transition-colors">Reviews</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-slate-700 hover:text-brand-600 hover:bg-slate-50 font-medium transition-colors">Contact</a>
+            <div class="pt-2">
+                <a href="#menu" class="block text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-xl shadow-md transition-colors">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-gradient-to-b from-brand-50/60 to-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <!-- Left Text Content -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-100 text-brand-700 font-semibold text-sm shadow-sm">
+                        🚀 Super Fast Food Delivery
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Delicious Food <br class="hidden sm:inline">Delivered to Your <span class="text-brand-600">Door</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0">
+                        Satisfy your cravings with fresh, mouth-watering dishes prepared by top chefs and delivered hot right to your doorstep in minutes.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#menu" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 hover:-translate-y-0.5 transition-all text-center">
+                            Explore Menu 🍕
+                        </a>
+                        <a href="#offer" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-800 font-bold px-8 py-4 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-all text-center">
+                            Get Special Discount
+                        </a>
+                    </div>
+                    <!-- Quick Stats -->
+                    <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">30 Min</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Avg Delivery Time</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">50+</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Food Items</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-slate-900">4.9 ★</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Food Image -->
+                <div class="lg:col-span-6 relative flex justify-center">
+                    <div class="relative w-full max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -top-6 -bottom-6 -left-6 -right-6 bg-brand-500/10 rounded-full blur-3xl -z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Delicious Gourmet Burger" 
+                             class="w-full h-auto object-cover rounded-3xl shadow-2xl shadow-slate-900/15 hover:scale-[1.02] transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUS FEATURE: FOOD CATEGORIES -->
+    <section class="py-10 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+                <button class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-brand-600 text-white font-semibold shadow-md shadow-brand-500/20">
+                    <span>🔥</span> All Dishesh
+                </button>
+                <button class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition-colors">
+                    <span>🍔</span> Burgers
+                </button>
+                <button class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition-colors">
+                    <span>🍕</span> Pizza
+                </button>
+                <button class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition-colors">
+                    <span>🥤</span> Drinks
+                </button>
+                <button class="flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold transition-colors">
+                    <span>🍰</span> Desserts
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. POPULAR DISHES SECTION -->
+    <section id="menu" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-brand-600 font-bold uppercase tracking-wider text-sm">Our Menu</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">Most Popular Dishes</p>
+                <p class="text-slate-600">Explore our top-rated culinary creations loved by thousands of hungry foodies every day.</p>
+            </div>
+
+            <!-- Food Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Food Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100 flex flex-col justify-between group">
+                    <div class="relative">
+                        <!-- Bonus: Discount Badge -->
+                        <span class="absolute top-4 left-4 z-10 bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+                            20% OFF
+                        </span>
+                        <div class="overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Classic Cheeseburger" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Classic Cheeseburger</h3>
+                                <span class="text-amber-500 font-semibold text-sm flex items-center gap-1">★ 4.9</span>
+                            </div>
+                            <p class="text-slate-600 text-sm line-clamp-2">Juicy beef patty with melted cheddar cheese, fresh lettuce, tomatoes, and signature special sauce.</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Price</span>
+                                <span class="text-2xl font-extrabold text-slate-900">$8.99</span>
+                            </div>
+                            <button class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100 flex flex-col justify-between group">
+                    <div class="relative">
+                        <!-- Bonus: Discount Badge -->
+                        <span class="absolute top-4 left-4 z-10 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+                            HOT SELLER
+                        </span>
+                        <div class="overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Pepperoni Delight Pizza" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Pepperoni Delight Pizza</h3>
+                                <span class="text-amber-500 font-semibold text-sm flex items-center gap-1">★ 4.8</span>
+                            </div>
+                            <p class="text-slate-600 text-sm line-clamp-2">Hand-tossed crust topped with rich tomato sauce, extra mozzarella, and spicy pepperoni slices.</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Price</span>
+                                <span class="text-2xl font-extrabold text-slate-900">$14.99</span>
+                            </div>
+                            <button class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-slate-100 flex flex-col justify-between group">
+                    <div class="relative">
+                        <div class="overflow-hidden h-60">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Fresh Healthy Salad" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Fresh Healthy Salad</h3>
+                                <span class="text-amber-500 font-semibold text-sm flex items-center gap-1">★ 4.7</span>
+                            </div>
+                            <p class="text-slate-600 text-sm line-clamp-2">Crisp mixed greens, avocados, cherry tomatoes, cucumbers, drizzled with zesty olive oil dressing.</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <span class="text-xs text-slate-400 block">Price</span>
+                                <span class="text-2xl font-extrabold text-slate-900">$6.99</span>
+                            </div>
+                            <button class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WHY CHOOSE US? -->
+    <section id="why-us" class="py-20 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-brand-600 font-bold uppercase tracking-wider text-sm">Our Features</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">Why Choose FoodieExpress?</p>
+                <p class="text-slate-600">We prioritize quality, speed, and customer happiness in every meal we deliver.</p>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 hover:bg-brand-50/50 border border-slate-100 hover:border-brand-200 transition-all duration-300 text-center space-y-4 group">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center text-3xl mx-auto group-hover:scale-110 transition-transform">
+                        ⚡
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Fast Delivery</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Our dedicated riders ensure your hot food arrives at your door within 30 minutes or less.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 hover:bg-brand-50/50 border border-slate-100 hover:border-brand-200 transition-all duration-300 text-center space-y-4 group">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center text-3xl mx-auto group-hover:scale-110 transition-transform">
+                        🥗
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Fresh Ingredients</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">We source 100% organic, farm-fresh ingredients daily to prepare healthy and nutritious meals.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 hover:bg-brand-50/50 border border-slate-100 hover:border-brand-200 transition-all duration-300 text-center space-y-4 group">
+                    <div class="w-16 h-16 bg-white rounded-2xl shadow-md flex items-center justify-center text-3xl mx-auto group-hover:scale-110 transition-transform">
+                        🏷️
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Affordable Prices</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Enjoy restaurant-quality meals at unbeatable budget-friendly prices with no hidden charges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SPECIAL OFFER SECTION -->
+    <section id="offer" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Background decorative gradient -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-gradient-to-r from-brand-600 to-brand-700 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="space-y-4 text-center lg:text-left max-w-2xl">
+                    <span class="inline-block bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+                        Limited Time Offer ⏳
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight">
+                        Get 20% Off Your First Order!
+                    </h2>
+                    <p class="text-white/90 text-base sm:text-lg">
+                        Use promo code <span class="font-mono font-bold bg-slate-900/30 px-2 py-1 rounded">FOODIE20</span> at checkout and enjoy delicious savings today.
+                    </p>
+                </div>
+                <div>
+                    <a href="#menu" class="inline-block bg-white hover:bg-slate-100 text-brand-700 font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-100 transition-all">
+                        Claim Offer Now 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUS FEATURE: CUSTOMER REVIEWS -->
+    <section id="reviews" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-brand-600 font-bold uppercase tracking-wider text-sm">Testimonials</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900">What Our Customers Say</p>
+                <p class="text-slate-600">Hear from our satisfied food lovers about their experiences.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+                    <div class="flex text-amber-400 text-lg">★★★★★</div>
+                    <p class="text-slate-600 text-sm italic">"The burger arrived piping hot and tasted absolute perfection. FoodieExpress is my go-to app for quick dinners!"</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-700 font-bold flex items-center justify-center">SR</div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-900">Saiful Rahman</p>
+                            <p class="text-xs text-slate-400">Regular Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+                    <div class="flex text-amber-400 text-lg">★★★★★</div>
+                    <p class="text-slate-600 text-sm italic">"Super fast 20-minute delivery! The pizza crust was crispy and fresh. Highly recommended to everyone."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center">AH</div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-900">Anika Hasan</p>
+                            <p class="text-xs text-slate-400">Food Blogger</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-4">
+                    <div class="flex text-amber-400 text-lg">★★★★★</div>
+                    <p class="text-slate-600 text-sm italic">"Great customer service and budget-friendly offers. The 20% promo code worked instantly on my order."</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center">TK</div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-900">Tanvir Khan</p>
+                            <p class="text-xs text-slate-400">Verified User</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Info -->
+                <div class="md:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-2">
+                        <span class="text-3xl"></span>
+                        <span class="text-2xl font-extrabold text-white">Foodie<span class="text-brand-500">Express</span></span>
+                    </a>
+                    <p class="text-sm text-slate-400 max-w-sm">
+                        Delivering happiness and fresh meals right to your doorstep with love, speed, and efficiency.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex items-center space-x-4 pt-2">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors" aria-label="Facebook">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-3">
+                    <p class="text-white font-bold text-base">Quick Links</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#menu" class="hover:text-white transition-colors">Popular Menu</a></li>
+                        <li><a href="#why-us" class="hover:text-white transition-colors">Why Choose Us</a></li>
+                        <li><a href="#offer" class="hover:text-white transition-colors">Special Offers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-3">
+                    <p class="text-white font-bold text-base">Contact Us</p>
+                    <ul class="space-y-2 text-sm">
+                        <li> 123 Foodie Street, Chittagong, Bangladesh</li>
+                        <li> +880 1609-413119</li>
+                        <li> support@foodieexpress.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+                &copy; 2026 FoodieExpress. All rights reserved. 
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle (Optional Bonus) -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
