@@ -25,9 +25,9 @@ A modern, highly responsive, and attractive landing page built for **FoodieExpre
    - **Bonus**: Promotional discount badges (*20% OFF*, *HOT SELLER*).
 
 4. **Why Choose Us? (Benefits)**
-   - Fast Delivery ⚡
-   - Fresh Ingredients 🥗
-   - Affordable Prices 🏷️
+   - Fast Delivery 
+   - Fresh Ingredients 
+   - Affordable Prices 
    - Designed with clean icons and hover micro-interactions.
 
 5. **Special Offer Section**
@@ -38,7 +38,7 @@ A modern, highly responsive, and attractive landing page built for **FoodieExpre
    - Rating stars, customer quotes, and user avatars.
 
 7. **Footer**
-   - Website name, copyright notice, contact details, and social media links (Facebook, Instagram, Twitter).
+   - Website name, copyright notice, contact details, and social media links (Facebook, Instagram).
 
 ---
 
